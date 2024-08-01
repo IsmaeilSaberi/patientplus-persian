@@ -147,7 +147,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                     <div key={option} className="radio-group">
                       <RadioGroupItem value={option} id={option} />
                       <Label htmlFor={option} className="cursor-pointer">
-                        {option == "Male" ? "مرد" : "زن"}
+                        {option == "male" ? "مرد" : "زن"}
                       </Label>
                     </div>
                   ))}

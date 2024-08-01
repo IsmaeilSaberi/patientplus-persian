@@ -44,13 +44,13 @@ const Success = async ({
             alt="success"
           />
           <h2 className="header mb-6 max-w-[600px] text-center">
-            Your <span className="text-green-500">appointment request</span> has
-            been successfully submitted!
+            <span className="text-green-500">درخواست قرار ملاقات شما </span>
+            با موفقیت ارسال شد!
           </h2>
-          <p>We wll be in touch shortly to confirm.</p>
+          <p>ما بزودی درخواستتان را بررسی می کنیم.</p>
         </section>
         <section className="request-details">
-          <p>Requested appointment details:</p>
+          <p>جزئیات قرار ملاقات درخواست شده:</p>
           <div className="flex items-center gap-3">
             <Image
               src={doctor?.image!}
@@ -59,7 +59,7 @@ const Success = async ({
               height={100}
               className="size-6"
             />
-            <p className="whitespace-nowrap">Dr. {doctor?.name}</p>
+            <p className="whitespace-nowrap">دکتر. {doctor?.name}</p>
           </div>
           <div className="flex gap-2">
             <Image
@@ -73,10 +73,10 @@ const Success = async ({
         </section>
         <Button variant="outline" className="shad-primary-btn" asChild>
           <Link href={`/patients/${userId}/new-appointment`}>
-            New Appointment
+            قرار ملاقات جدید
           </Link>
         </Button>
-        <p className="copyright">© 2024 CarePlus</p>
+        <p className="copyright inputLtr">© 2024 CarePlus</p>
       </div>
     </div>
   );

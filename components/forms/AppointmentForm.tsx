@@ -29,8 +29,8 @@ const AppointmentForm = ({
   userId: string;
   patientId: string;
   type: "create" | "cancel" | "schedule";
-  appointment: Appointment;
-  setOpen: (open: boolean) => void;
+  appointment?: Appointment;
+  setOpen?: (open: boolean) => void;
 }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -114,13 +114,13 @@ const AppointmentForm = ({
 
   switch (type) {
     case "cancel":
-      buttonLabel = "Cancel Appointment";
+      buttonLabel = "لغو قرار ملاقات";
       break;
     case "create":
-      buttonLabel = "Create Appointment";
+      buttonLabel = "درخواست قرار ملاقات";
       break;
     case "schedule":
-      buttonLabel = "Schedule Appointment";
+      buttonLabel = "ایجاد قرار ملاقات";
       break;
 
     default:
@@ -132,9 +132,9 @@ const AppointmentForm = ({
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         {type === "create" && (
           <section className="mb-12 space-y-4">
-            <h1 className="header">New Appointment</h1>
+            <h1 className="header">قرار ملاقات جدید</h1>
             <p className="text-dark-700">
-              Request a new appointment in 10 seconds
+              در 10 ثانیه یک قرار ملاقات جدید درخواست بده
             </p>
           </section>
         )}
@@ -144,8 +144,8 @@ const AppointmentForm = ({
               control={form.control}
               fieldType={FormFieldType.SELECT}
               name="primaryPhysician"
-              label="Doctor"
-              placeholder="Select a doctor"
+              label="دکتر"
+              placeholder="یک دکتر را انتخاب کن"
             >
               {Doctors.map((doctor) => (
                 <SelectItem key={doctor.name} value={doctor.name}>
@@ -166,7 +166,7 @@ const AppointmentForm = ({
               control={form.control}
               fieldType={FormFieldType.DATE_PICKER}
               name="schedule"
-              label="Expected appointment date"
+              label="تاریخ مورد انتظار برای قرار ملاقات"
               showTimeSelect
               dateFormat="MM/dd/yyyy - h:mm aa"
             />
@@ -175,15 +175,15 @@ const AppointmentForm = ({
                 control={form.control}
                 fieldType={FormFieldType.TEXTAREA}
                 name="reason"
-                label="Reason for appointment"
-                placeholder="Enter reason for appointment"
+                label="دلیل برای قرار ملاقات"
+                placeholder="یک دلیل برای درخواست قرار ملاقات بنویس"
               />
               <CustomFormField
                 control={form.control}
                 fieldType={FormFieldType.TEXTAREA}
                 name="note"
-                label="Note"
-                placeholder="Enter note"
+                label="یادداشت"
+                placeholder="یادداشت خود را اینجا وارد کن"
               />
             </div>
           </>
@@ -193,8 +193,8 @@ const AppointmentForm = ({
             control={form.control}
             fieldType={FormFieldType.TEXTAREA}
             name="cancellationReason"
-            label="Reason for cancellation"
-            placeholder="Enter reason for cancellation"
+            label="دلیل برای لغو"
+            placeholder="یک دلیل برای لغو وارد کن"
           />
         )}
         <SubmitButton
