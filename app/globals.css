@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  direction: rtl;
+}
+
+.ctrls {
+  direction: ltr;
+}
+
+.en-digits {
+  font-family: sans-serif;
+}
+
+.inputLtr {
+  direction: ltr;
+}
 /* ========================================== TAILWIND STYLES */
 @layer base {
   /* Remove scrollbar */

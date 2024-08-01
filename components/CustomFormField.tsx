@@ -21,6 +21,7 @@ import { Textarea } from "./ui/textarea";
 import { Checkbox } from "./ui/checkbox";
 
 interface CustomProps {
+  direction?: string;
   control: Control<any>;
   fieldType: FormFieldType;
   name: string;
@@ -43,6 +44,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
     placeholder,
     showTimeSelect,
     dateFormat,
+    direction,
     renderSkeleton,
   } = props;
   switch (fieldType) {
@@ -88,7 +90,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             withCountryCallingCode
             value={field.value as E164Number | undefined}
             onChange={field.onChange}
-            className="input-phone"
+            className={`input-phone ${direction}`}
           />
         </FormControl>
       );
