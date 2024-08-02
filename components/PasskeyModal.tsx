@@ -55,7 +55,7 @@ const PasskeyModal = () => {
 
       setOpen(false);
     } else {
-      setError("Invalid passkey. Please try again.");
+      setError("کلید نامعتبر. لطفا مجددا تلاش کنید.");
     }
   };
 
@@ -68,8 +68,8 @@ const PasskeyModal = () => {
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogContent className="shad-alert-dialog">
         <AlertDialogHeader>
-          <AlertDialogTitle className="flex items-start justify-between">
-            Admin Access Verification
+          <AlertDialogTitle className="flex items-end justify-between">
+            احراز هویت دسترسی ادمین
             <Image
               src="/assets/icons/close.svg"
               alt="close"
@@ -79,8 +79,8 @@ const PasskeyModal = () => {
               className="cursor-pointer"
             />
           </AlertDialogTitle>
-          <AlertDialogDescription>
-            To access the admin page, please enter the passkey.
+          <AlertDialogDescription className="flex items-end">
+            برای دسترسی به صفحه ادمین لطفا کلید دسترسی را وارد کنید.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <div>
@@ -89,7 +89,7 @@ const PasskeyModal = () => {
             value={passkey}
             onChange={(value) => setPasskey(value)}
           >
-            <InputOTPGroup className="shad-otp">
+            <InputOTPGroup className="shad-otp inputLtr">
               <InputOTPSlot className="shad-otp-slot" index={0} />
               <InputOTPSlot className="shad-otp-slot" index={1} />
               <InputOTPSlot className="shad-otp-slot" index={2} />
@@ -109,7 +109,7 @@ const PasskeyModal = () => {
             onClick={(e) => validatePasskey(e)}
             className="shad-primary-btn w-full"
           >
-            Enter Admin Passkey
+            ورود کلید دسترسی
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

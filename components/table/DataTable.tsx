@@ -80,7 +80,7 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
-      <div className="table-actions inputLtr">
+      <div className="table-actions">
         <Button
           variant="outline"
           size="sm"
@@ -93,6 +93,7 @@ export function DataTable<TData, TValue>({
             width={24}
             height={24}
             alt="arrow"
+            className="rotate-180"
           />
         </Button>
         <Button
@@ -107,7 +108,6 @@ export function DataTable<TData, TValue>({
             width={24}
             height={24}
             alt="arrow"
-            className="rotate-180"
           />
         </Button>
       </div>
