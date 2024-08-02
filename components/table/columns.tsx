@@ -11,19 +11,19 @@ import { Appointment } from "@/types/appwrite.types";
 
 export const columns: ColumnDef<Appointment>[] = [
   {
-    header: "ID",
+    header: "ردیف",
     cell: ({ row }) => <p className="text-14-medium">{row.index + 1}</p>,
   },
   {
     accessorKey: "patient",
-    header: "Patient",
+    header: "بیمار",
     cell: ({ row }) => {
       return <p className="text-14-medium">{row.original.patient.name}</p>;
     },
   },
   {
     accessorKey: "status",
-    header: "Status",
+    header: "وضعیت",
     cell: ({ row }) => {
       return (
         <div className="min-w-[115px]">
@@ -34,7 +34,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "schedule",
-    header: "Appointment",
+    header: "قرار ملاقات",
     cell: ({ row }) => (
       <p className="text-14-regular min-w-[100px]">
         {formatDateTime(row.original.schedule).dateTime}
@@ -43,7 +43,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     accessorKey: "primaryPhysician",
-    header: () => "Doctor",
+    header: () => "دکتر",
     cell: ({ row }) => {
       const doctor = Doctors.find(
         (doc) => doc.name === row.original.primaryPhysician
@@ -52,8 +52,8 @@ export const columns: ColumnDef<Appointment>[] = [
       return (
         <div className="flex items-center gap-3">
           <Image
-            src={doctor?.image}
-            alt={doctor.name}
+            src={doctor?.image!}
+            alt="doctor"
             width={100}
             height={100}
             className="size-8"
@@ -65,7 +65,7 @@ export const columns: ColumnDef<Appointment>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="pl-4">Actions</div>,
+    header: () => <div className="pl-4">فعالیت ها</div>,
     cell: ({ row: { original: data } }) => {
       return (
         <div className="flex gap-1">

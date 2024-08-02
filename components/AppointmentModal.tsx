@@ -32,14 +32,18 @@ const AppointmentModal = ({
           variant="ghost"
           className={`capitalize ${type === "schedule" && "text-green-500"}`}
         >
-          {type}
+          {type === "schedule" ? "برنامه ریزی " : "لغو"}
         </Button>
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
         <DialogHeader className="mb-4 space-y-3">
-          <DialogTitle className="capitalize">{type} Appointment</DialogTitle>
+          <DialogTitle className="capitalize">
+            {type === "schedule" ? "برنامه ریزی " : "لغو"} قرار ملاقات
+          </DialogTitle>
           <DialogDescription>
-            Please fill in the following details to {type} an appointment
+            لطفا فرم مقابل را برای{" "}
+            {type === "schedule" ? "برنامه ریزی " : "لغو"} یک قرار ملاقات پر
+            کنید
           </DialogDescription>
         </DialogHeader>
         <AppointmentForm

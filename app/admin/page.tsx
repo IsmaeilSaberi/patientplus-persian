@@ -21,13 +21,13 @@ const Admin = async () => {
             className="h-8 w-fit"
           />
         </Link>
-        <p className="text-16-semibold">Admin Dashboard</p>
+        <p className="text-16-semibold">پنل مدیریتی</p>
       </header>
       <main className="admin-main">
         <section className="w-full space-y-4">
-          <h1 className="header">Welcome 🖐</h1>
+          <h1 className="header">خوش آمدی 🖐</h1>
           <p className="text-dark-700">
-            Start the day with managing new appointments
+            روز رو با مدیریت قرار ملاقات ها شروع کن
           </p>
         </section>
 
@@ -35,19 +35,19 @@ const Admin = async () => {
           <StatCard
             type="appointments"
             count={appointments.scheduledCount}
-            label="Scheduled appointments"
+            label="قرارهای برنامه ریزی شده"
             icon="/assets/icons/appointments.svg"
           />
           <StatCard
             type="pending"
             count={appointments.pendingCount}
-            label="Pending appointments"
+            label="قرارهای معلق"
             icon="/assets/icons/pending.svg"
           />
           <StatCard
             type="cancelled"
             count={appointments.cancelledCount}
-            label="Cancelled appointments"
+            label="قرارهای لغو شده"
             icon="/assets/icons/cancelled.svg"
           />
         </section>

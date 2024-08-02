@@ -183,6 +183,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           />
 
           <CustomFormField
+            direction="inputLtr"
             control={form.control}
             fieldType={FormFieldType.PHONE_INPUT}
             name="emergencyContactNumber"

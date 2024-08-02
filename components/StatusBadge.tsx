@@ -26,7 +26,11 @@ const StatusBadge = ({ status }: { status: Status }) => {
           "text-red-500": status === "cancelled",
         })}
       >
-        {status}
+        {status === "scheduled"
+          ? "برنامه ریزی شده"
+          : status === "pending"
+          ? "معلق"
+          : "لغو شده"}
       </p>
     </div>
   );
