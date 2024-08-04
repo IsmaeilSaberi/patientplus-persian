@@ -39,14 +39,14 @@ const Success = async ({
         <section className="flex flex-col items-center">
           <Image
             src="/assets/gifs/success.gif"
-            height={300}
-            width={280}
+            height={280}
+            width={240}
             alt="success"
           />
-          <h2 className="header mb-6 max-w-[600px] text-center">
+          <h3 className="text-2xl mb-4 max-w-[600px] text-center">
             <span className="text-green-500">درخواست قرار ملاقات شما </span>
             با موفقیت ارسال شد!
-          </h2>
+          </h3>
           <p>ما بزودی درخواستتان را بررسی می کنیم.</p>
         </section>
         <section className="request-details">

@@ -27,55 +27,55 @@ export const PatientFormDefaultValues = {
 };
 
 export const IdentificationTypes = [
-  "Birth Certificate",
-  "Driver's License",
-  "Medical Insurance Card/Policy",
-  "Military ID Card",
-  "National Identity Card",
-  "Passport",
-  "Resident Alien Card (Green Card)",
-  "Social Security Card",
-  "State ID Card",
-  "Student ID Card",
-  "Voter ID Card",
+  "گواهی تولد",
+  "گواهینامه رانندگی",
+  "کارت شناسایی نظامی",
+  "کارت/بیمه نامه پزشکی",
+  "کارت شناسایی ملی",
+  "گذرنامه",
+  "کارت مقیم (گرین کارت)",
+  "کارت امنیت اجتماعی",
+  "کارت شناسایی دولتی",
+  "کارت دانشجویی",
+  "کارت شناسایی رای دهنده",
 ];
 
 export const Doctors = [
   {
     image: "/assets/images/dr-green.png",
-    name: "John Green",
+    name: "خلیل نجفی",
   },
   {
     image: "/assets/images/dr-cameron.png",
-    name: "Leila Cameron",
+    name: "لیلا کورکی",
   },
   {
     image: "/assets/images/dr-livingston.png",
-    name: "David Livingston",
+    name: "احمد برزگر",
   },
   {
     image: "/assets/images/dr-peter.png",
-    name: "Evan Peter",
+    name: "احمد ایرانی",
   },
   {
     image: "/assets/images/dr-powell.png",
-    name: "Jane Powell",
+    name: "زهرا مینایی",
   },
   {
     image: "/assets/images/dr-remirez.png",
-    name: "Alex Ramirez",
+    name: "علی فروتن",
   },
   {
     image: "/assets/images/dr-lee.png",
-    name: "Jasmine Lee",
+    name: "اسماعیل عادلی نسب",
   },
   {
     image: "/assets/images/dr-cruz.png",
-    name: "Alyana Cruz",
+    name: "ارشیا مولوی",
   },
   {
     image: "/assets/images/dr-sharma.png",
-    name: "Hardik Sharma",
+    name: "علیرضا اسفندیاری",
   },
 ];
 

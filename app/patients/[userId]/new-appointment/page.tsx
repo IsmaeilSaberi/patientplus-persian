@@ -20,14 +20,14 @@ export default async function NewAppointment({
             height={1000}
             width={1000}
             alt="patient"
-            className="mb-12 h-10 w-fit"
+            className="mb-6 h-10 w-fit"
           />
           <AppointmentForm
             type="create"
             userId={userId}
             patientId={patient?.$id}
           />
-          <p className="copyright mt-10 py-12 inputLtr">© 2024 CarePlus</p>
+          <p className="copyright mt-4 py-4 inputLtr">© 2024 CarePlus</p>
         </div>
       </section>
       <Image

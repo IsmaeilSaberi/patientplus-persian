@@ -3,20 +3,16 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/Header";
 
 const myFont = localFont({
   src: "fonts/Shabnam-FD.woff",
   display: "swap",
 });
-// const fontSans = Plus_Jakarta_Sans({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "500", "600", "700"],
-//   variable: "--font-sans",
-// });
 
 export const metadata: Metadata = {
-  title: "PatientPlus  ",
-  description: "A cool health app for seeting and managing appointments.",
+  title: "Patient Online  ",
+  description: "اپلیکیشن مدیریت ارتباط و قرار ملاقات پزشک و بیمار.",
 };
 
 export default function RootLayout({
@@ -27,6 +23,7 @@ export default function RootLayout({
   return (
     <html className={myFont.className}>
       <body className={cn("min-h-screen bg-dark-300 font-sans antialiased")}>
+        <Header />
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
