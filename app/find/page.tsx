@@ -69,7 +69,7 @@ const Map: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (typeof global?.window !== "undefined" && navigator.geolocation) {
+    if (typeof window !== "undefined" && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setUserLocation([
@@ -86,9 +86,17 @@ const Map: React.FC = () => {
     }
   }, []);
 
-  if (typeof global?.window === "undefined") {
-    return null; // Return null during SSR
-  }
+  const runOnClient = (func: () => any) => {
+    if (typeof window !== "undefined") {
+      if (window.document.readyState == "loading") {
+        window.addEventListener("load", func);
+      } else {
+        func();
+      }
+    }
+  };
+
+  runOnClient(() => {});
 
   return (
     <div className="h-screen flex flex-col">
