@@ -92,17 +92,18 @@ export const updateAppointment = async ({
     );
 
     if (!updatedAppointment) {
-      throw new Error("Appointment not found");
+      throw new Error("قرار ملاقات پیدا نشد.");
     }
 
     const smsMessage = `
-    Hi, it's CarePlus. 
+    سلام به شما از بیمار آنلاین. 
     ${
       type === "schedule"
-        ? `Your appointment has been scheduled for ${formatDateTime(
-            appointment.schedule!
-          ).dateTime!} with Dr. ${appointment.primaryPhysician}.`
-        : `We regret to inform that your appointment has been cancelled for the following reason: ${appointment.cancellationReason}`
+        ? `قرار ملاقات شما برای ${formatDateTime(appointment.schedule!)
+            .dateTime!} با دکتر. ${
+            appointment.primaryPhysician
+          } تنظیم و قطعی شد.`
+        : `به استحضار عالی می رساند که قرار ملاقات شما به دلیل: ${appointment.cancellationReason} لغو شد.`
     }`;
 
     await sendSMSNotification(userId, smsMessage);
